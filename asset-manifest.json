@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.989b88c8.css",
-    "main.js": "/static/js/main.c25ccb3a.js",
-    "static/js/787.bcdd4ac8.chunk.js": "/static/js/787.bcdd4ac8.chunk.js",
-    "static/media/maestro.svg": "/static/media/maestro.272e9cd08ad44468b3376e30991f0aaf.svg",
-    "static/media/visa.svg": "/static/media/visa.3910a7d2cfa0bc2766a5bd81ea7d103b.svg",
-    "static/media/discover.svg": "/static/media/discover.bd9ca344d5c3b9fd287ac3fb0909fbde.svg",
-    "static/media/amex.svg": "/static/media/amex.c136c7ec80972995847081f1c8d154df.svg",
-    "index.html": "/index.html",
-    "static/media/close.svg": "/static/media/close.9e7714940a11eefdb4dadb40bc5254ab.svg",
-    "main.989b88c8.css.map": "/static/css/main.989b88c8.css.map",
-    "main.c25ccb3a.js.map": "/static/js/main.c25ccb3a.js.map",
-    "787.bcdd4ac8.chunk.js.map": "/static/js/787.bcdd4ac8.chunk.js.map"
+    "main.css": "/credit-card-validator/static/css/main.989b88c8.css",
+    "main.js": "/credit-card-validator/static/js/main.c3dcb25a.js",
+    "static/js/787.bcdd4ac8.chunk.js": "/credit-card-validator/static/js/787.bcdd4ac8.chunk.js",
+    "static/media/maestro.svg": "/credit-card-validator/static/media/maestro.272e9cd08ad44468b3376e30991f0aaf.svg",
+    "static/media/visa.svg": "/credit-card-validator/static/media/visa.3910a7d2cfa0bc2766a5bd81ea7d103b.svg",
+    "static/media/discover.svg": "/credit-card-validator/static/media/discover.bd9ca344d5c3b9fd287ac3fb0909fbde.svg",
+    "static/media/amex.svg": "/credit-card-validator/static/media/amex.c136c7ec80972995847081f1c8d154df.svg",
+    "index.html": "/credit-card-validator/index.html",
+    "static/media/close.svg": "/credit-card-validator/static/media/close.9e7714940a11eefdb4dadb40bc5254ab.svg",
+    "main.989b88c8.css.map": "/credit-card-validator/static/css/main.989b88c8.css.map",
+    "main.c3dcb25a.js.map": "/credit-card-validator/static/js/main.c3dcb25a.js.map",
+    "787.bcdd4ac8.chunk.js.map": "/credit-card-validator/static/js/787.bcdd4ac8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.989b88c8.css",
-    "static/js/main.c25ccb3a.js"
+    "static/js/main.c3dcb25a.js"
   ]
 }
