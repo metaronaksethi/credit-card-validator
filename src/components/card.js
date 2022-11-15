@@ -4,7 +4,7 @@ import closeIcon from "../static/cards/close.svg"
 
 const Card = () => {
 
-    const { cardNumber, setCardNumber, cardType, cardIcon, isValid, handelOnChange, handleOnBlur } = UseCCValidate();
+    const { cardNumber, setCardNumber, cardType, cardIcon, isValid, handelOnChange, handleOnBlur, errMsg } = UseCCValidate();
 
     return (
         <div className="card-container">
@@ -20,16 +20,17 @@ const Card = () => {
                 maxLength={19}
                 placeholder="0000 0000 0000 0000"
             />
-            {cardType && isValid && <img alt={cardType} className="ccicon" src={cardIcon} />}
+            {cardType && isValid && <img alt="card-icon" className="ccicon" src={cardIcon} />}
             {!isValid && (
                 <img
                     alt='remove'
+                    data-testid="closeicon"
                     className="closeicon"
                     src={closeIcon}
                     onClick={() => setCardNumber("")}
                 />
             )}
-            {!isValid && <span className="card-error">Invaild card number</span>}
+           <span data-testid="card-error" className="card-error">{errMsg}</span>
         </div>
 
     );

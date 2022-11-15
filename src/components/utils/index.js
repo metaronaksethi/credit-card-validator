@@ -3,46 +3,46 @@ import amexIco from "../../static/cards/amex.svg";
 import mastercardIco from "../../static/cards/maestro.svg";
 import discoverIco from "../../static/cards/discover.svg";
 
-export const getCType = async (ccNum) => {
-  let ccNumLength = ccNum.length;
+export const getCardType = async (creditCardNumber) => {
+  let ccNumLength = creditCardNumber.length;
   let type = "";
   let icon = "";
   let isValid = true;
 
-  if (ccNum.length === 0)
+  if (creditCardNumber.length === 0)
     return {
       icon,
       type,
       isValid,
     };
 
-  // Check validation for amex card
-  if (ccNum.startsWith("34") || ccNum.startsWith("37")) {
-    icon = amexIco;
-    type = "amex";
-  }
+    // Check validation for amex card
+    if (creditCardNumber.startsWith("34") || creditCardNumber.startsWith("37")) {
+      icon = amexIco;
+      type = "amex";
+    }
 
-  // Check validation for discover card
-  if (ccNum.startsWith("6011")) {
-    icon = discoverIco;
-    type = "discover";
-  }
+    // Check validation for discover card
+    if (creditCardNumber.startsWith("6011")) {
+      icon = discoverIco;
+      type = "discover";
+    }
 
-  // Check validation for master card
-  if (ccNum.slice(0, 2) >= 51 && ccNum.slice(0, 2) <= 55) {
-    icon = mastercardIco;
-    type = "mastercard";
-  }
+    // Check validation for master card
+    if (creditCardNumber.slice(0, 2) >= 51 && creditCardNumber.slice(0, 2) <= 55) {
+      icon = mastercardIco;
+      type = "mastercard";
+    }
 
-  // Check validation for visa card
-  if (ccNum.startsWith("4")) {
-    icon = visaIco;
-    type = "visa";
-  }
+    // Check validation for visa card
+    if (creditCardNumber.startsWith("4")) {
+      icon = visaIco;
+      type = "visa";
+    }
 
-  if (ccNumLength >= 13) {
-    isValid = await isValidLength(type, ccNumLength);
-  }
+    if (ccNumLength >= 13) {
+      isValid = await isValidLength(type, ccNumLength);
+    }
 
   return {
     icon,
@@ -69,22 +69,21 @@ export const validateCardNumber = (number) => {
   if (!regex.test(number)) {
     return false;
   }
-
   return luhnCheck(number);
 };
 
 const luhnCheck = (number) => {
-  let numCheck = 0,
+  let numberCheck = 0,
     numEven = false;
   for (var n = number.length - 1; n >= 0; n--) {
     var countDigit = number.charAt(n),
-      numDigit = parseInt(countDigit, 10);
+      digit = parseInt(countDigit, 10);
 
-    if (numEven && (numDigit *= 2) > 9) numDigit -= 9;
+    if (numEven && (digit *= 2) > 9) digit -= 9;
 
-    numCheck += numDigit;
+    numberCheck += digit;
     numEven = !numEven;
   }
 
-  return numCheck % 10 === 0;
+  return numberCheck % 10 === 0;
 };

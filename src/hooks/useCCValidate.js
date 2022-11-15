@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { getCType, validateCardNumber } from "../components/utils";
+import { getCardType, validateCardNumber } from "../components/utils";
 
 const UseCCValidate = () => {
   const [cardNumber, setCardNumber] = useState("");
   const [cardType, setCardType] = useState(null);
   const [cardIcon, setCardIcon] = useState(null);
   const [isValid, setIsValid] = useState(true);
+  const [errMsg, setErrMsg] = useState("");
 
   useEffect(() => {
     if (cardNumber.length === 0) {
@@ -24,15 +25,17 @@ const UseCCValidate = () => {
         .replace(/(.{4})/g, "$1 ")
         .trim()
     );
-    const cardValidObj = await getCType(enterValue.replace(/ /g, ""));
+    const cardValidObj = await getCardType(enterValue.replace(/ /g, ""));
     setCardType(cardValidObj.type);
     setCardIcon(cardValidObj.icon);
     setIsValid(cardValidObj.isValid);
+    if (cardValidObj.isValid === false) setErrMsg("Invaild card number");
   };
 
   const handleOnBlur = (e) => {
     if (cardNumber.length > 0) {
       const isValidCard = validateCardNumber(cardNumber.replace(/\D/g, ""));
+      if (!isValidCard) setErrMsg("Invaild card number");
       setIsValid(isValidCard);
     }
   };
@@ -45,6 +48,7 @@ const UseCCValidate = () => {
     isValid,
     handelOnChange,
     handleOnBlur,
+    errMsg
   };
 };
 
