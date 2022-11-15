@@ -29,13 +29,15 @@ const UseCCValidate = () => {
     setCardType(cardValidObj.type);
     setCardIcon(cardValidObj.icon);
     setIsValid(cardValidObj.isValid);
-    if (cardValidObj.isValid === false) setErrMsg("Invaild card number");
+    cardValidObj.isValid === false
+      ? setErrMsg("Invaild card number")
+      : setErrMsg("");
   };
 
   const handleOnBlur = (e) => {
     if (cardNumber.length > 0) {
       const isValidCard = validateCardNumber(cardNumber.replace(/\D/g, ""));
-      if (!isValidCard) setErrMsg("Invaild card number");
+      !isValidCard ? setErrMsg("Invaild card number") : setErrMsg("");
       setIsValid(isValidCard);
     }
   };
@@ -48,7 +50,7 @@ const UseCCValidate = () => {
     isValid,
     handelOnChange,
     handleOnBlur,
-    errMsg
+    errMsg,
   };
 };
 
