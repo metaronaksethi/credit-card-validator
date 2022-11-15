@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getCardType, validateCardNumber } from "../components/utils";
 
-const UseCCValidate = () => {
+const useCCValidate = () => {
   const [cardNumber, setCardNumber] = useState("");
   const [cardType, setCardType] = useState(null);
   const [cardIcon, setCardIcon] = useState(null);
@@ -54,4 +54,4 @@ const UseCCValidate = () => {
   };
 };
 
-export default UseCCValidate;
+export default useCCValidate;

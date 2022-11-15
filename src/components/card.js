@@ -1,10 +1,10 @@
 import React from 'react';
-import UseCCValidate from '../hooks/useCCValidate';
+import useCCValidate from '../hooks/useCCValidate';
 import closeIcon from "../static/cards/close.svg"
 
 const Card = () => {
 
-    const { cardNumber, setCardNumber, cardType, cardIcon, isValid, handelOnChange, handleOnBlur, errMsg } = UseCCValidate();
+    const { cardNumber, setCardNumber, cardType, cardIcon, isValid, handelOnChange, handleOnBlur, errMsg } = useCCValidate();
 
     return (
         <div className="card-container">
